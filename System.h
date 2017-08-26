@@ -3,6 +3,7 @@
 #ifndef SYSTEM
 #define SYSTEM
 
+// Base class that all systems inherit from
 class System {
 public:
   System(MessageBus *mainMessage) :s_MessageBus(mainMessage) { s_MessageBus->addSystem((System *)this); };

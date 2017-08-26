@@ -127,6 +127,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessageBus.cpp" />
     <ClCompile Include="Misc.cpp" />
+    <ClCompile Include="Profiler.cpp" />
     <ClCompile Include="System.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -134,8 +135,15 @@
     <ClInclude Include="Includes.h" />
     <ClInclude Include="MessageBus.h" />
     <ClInclude Include="Misc.h" />
+    <ClInclude Include="PoolAllocator.h" />
+    <ClInclude Include="Profiler.h" />
+    <ClInclude Include="StackAllocator.h" />
     <ClInclude Include="System.h" />
     <ClInclude Include="Types.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PoolAllocator.tcc" />
+    <None Include="StackAllocator.tcc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

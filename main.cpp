@@ -7,6 +7,11 @@
 #include "Console.h"
 #include "Misc.h"
 
+#include <stack>
+#include "Profiler.h"
+#include "PoolAllocator.h"
+#include "StackAllocator.h"
+
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
 
@@ -16,10 +21,33 @@ const unsigned int SCR_HEIGHT = 600;
 MessageBus testBus;
 Console testConsole(&testBus);
 
+Stopwatch teststopwatch;
+
 Message testMessage{ "PHYSICS", "BALL DROPPED" };
+
+struct TESTSTRUCT {
+  //int a;
+  //uint8 b{ 0 };
+  //uint16 B{ 3 };
+  uint64 c;
+  uint32 b;
+  uint64 a;
+  
+  //MessageBus d;
+  //MessageBus a;
+  //MessageBus b;
+  //MessageBus e;
+};
 
 int main()
 {
+  std::vector<TESTSTRUCT, StackAllocator<TESTSTRUCT>> a;
+  a.push_back({ 4, 5, 6 });
+  a.push_back({ 1, 2, 3 });
+  a.pop_back();
+  testConsole.printToConsole(" ", a.back().a, a.back().b, a.back().c);
+ 
+  teststopwatch.start();
   testBus.addMessage(&testMessage);
   // glfw: initialize and configure
   // ------------------------------
@@ -52,14 +80,16 @@ int main()
     return -1;
   }
 
+  teststopwatch.stop();
   // render loop
   // -----------
   while (!glfwWindowShouldClose(window))
   {
+    teststopwatch.start();
     // input
     // -----
     processInput(window);
-
+    
     // render
     // ------
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -69,6 +99,8 @@ int main()
     // -------------------------------------------------------------------------------
     glfwSwapBuffers(window);
     glfwPollEvents();
+    teststopwatch.stop();
+    //testConsole.printToConsole("", teststopwatch.getMiliseconds());
   }
 
   // glfw: terminate, clearing all previously allocated GLFW resources.
@@ -85,6 +117,7 @@ void processInput(GLFWwindow *window)
   if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) //std::cin.get();
     //glfwSetWindowShouldClose(window, true);
     testConsole.getInput();
+  //testConsole.printToConsole(" ", "This", "Should", "work");
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes

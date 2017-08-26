@@ -10,8 +10,10 @@ void MessageBus::addMessage(const Message *newMessage) {
 }
 
 void MessageBus::notfitySystems() {
+  // For each message
   while (messages.size()) {
     const Message *nextMessage = messages.front();
+    // Send that message to each system
     for (auto eachSystem : systems) {
       eachSystem->processMessage(nextMessage);
     }
