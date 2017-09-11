@@ -9,8 +9,7 @@
 
 #include <stack>
 #include "Profiler.h"
-#include "PoolAllocator.h"
-#include "StackAllocator.h"
+#include "ResourceManager.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
@@ -20,6 +19,7 @@ const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 MessageBus testBus;
 Console testConsole(&testBus);
+ResourceManager testResourceManager(&testBus, true);
 
 Stopwatch teststopwatch;
 
@@ -41,14 +41,17 @@ struct TESTSTRUCT {
 
 int main()
 {
-  std::vector<TESTSTRUCT, StackAllocator<TESTSTRUCT>> a;
-  a.push_back({ 4, 5, 6 });
-  a.push_back({ 1, 2, 3 });
-  a.pop_back();
-  testConsole.printToConsole(" ", a.back().a, a.back().b, a.back().c);
- 
+  //Path a("C:/engine/test.txt", '/');
+  //testConsole.printToConsole(" ", a.getFile(), a.getFileType(), a.getPath());
+  std::shared_ptr<Resource> a = testResourceManager.load(Path("C:/engine/test.txt", '/'));
+  testConsole.printToConsole(" ", a, a.use_count());
+  testConsole.printToConsole(" ", Path("test.txt", '/').getPath());
+  //a = nullptr;
+  //testResourceManager.clearUnusedResources();
+  testBus.notfitySystems();
+
   teststopwatch.start();
-  testBus.addMessage(&testMessage);
+  testBus.addMessage(testMessage);
   // glfw: initialize and configure
   // ------------------------------
   glfwInit();

@@ -25,10 +25,11 @@ public:
   template<typename U>
   struct rebind { using other = StackAllocator<U>; };
 
-
+  // Allocates the memory but does not construct the objects
   pointer allocate(size_type n);
   void deallocate(pointer, size_type n);
 
+  // constructs and destroys the objects
   template<typename U, class... Args>
   void construct(U*, Args&&...);
   template<typename U>

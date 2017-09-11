@@ -1,5 +1,7 @@
 #include "Includes.h"
 
+#include <memory>
+
 class System;
 
 #ifndef MESSAGEBUS
@@ -9,6 +11,7 @@ class System;
 struct Message {
   std::string sender;
   std::string message;
+  std::shared_ptr<void> package;
 };
 
 // Message bus for communication between systems or inside of systems
@@ -17,7 +20,7 @@ public:
   // Adds a system listener
   void addSystem(System *);
   // adds a message to the queue
-  void addMessage(const Message *);
+  void addMessage(Message &);
 
   // notifies all systems and empties the queue
   void notfitySystems();
@@ -26,7 +29,7 @@ public:
   void immediateMessage(const Message &);
 
 private:
-  std::queue<const Message *> messages;
+  std::queue<Message> messages;
   std::vector<System *> systems;
 };
 

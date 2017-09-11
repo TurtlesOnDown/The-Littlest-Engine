@@ -37,6 +37,9 @@
     <Filter Include="Engine\Memory">
       <UniqueIdentifier>{3f01a742-e55a-4867-9b8d-64db17c8e21e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\ResourceManager">
+      <UniqueIdentifier>{db0b953a-42b7-43ed-b77a-4211245f1d10}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -62,6 +65,18 @@
     </ClCompile>
     <ClCompile Include="Profiler.cpp">
       <Filter>Engine\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>Engine\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Path.cpp">
+      <Filter>Engine\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>Engine\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Engine\ResourceManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +106,18 @@
     </ClInclude>
     <ClInclude Include="StackAllocator.h">
       <Filter>Engine\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Engine\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Path.h">
+      <Filter>Engine\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>Engine\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Engine\ResourceManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

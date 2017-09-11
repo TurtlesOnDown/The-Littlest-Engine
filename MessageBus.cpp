@@ -5,17 +5,17 @@ void MessageBus::addSystem(System *newSystem) {
   systems.push_back(newSystem);
 }
 
-void MessageBus::addMessage(const Message *newMessage) {
+void MessageBus::addMessage(Message &newMessage) {
   messages.push(newMessage);
 }
 
 void MessageBus::notfitySystems() {
   // For each message
   while (messages.size()) {
-    const Message *nextMessage = messages.front();
+    const Message nextMessage = messages.front();
     // Send that message to each system
     for (auto eachSystem : systems) {
-      eachSystem->processMessage(nextMessage);
+      eachSystem->processMessage(&nextMessage);
     }
     messages.pop();
   }

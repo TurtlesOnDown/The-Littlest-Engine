@@ -127,18 +127,26 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessageBus.cpp" />
     <ClCompile Include="Misc.cpp" />
+    <ClCompile Include="Path.cpp" />
     <ClCompile Include="Profiler.cpp" />
+    <ClCompile Include="Resource.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="System.cpp" />
+    <ClCompile Include="Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Console.h" />
     <ClInclude Include="Includes.h" />
     <ClInclude Include="MessageBus.h" />
     <ClInclude Include="Misc.h" />
+    <ClInclude Include="Path.h" />
     <ClInclude Include="PoolAllocator.h" />
     <ClInclude Include="Profiler.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="StackAllocator.h" />
     <ClInclude Include="System.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="Types.h" />
   </ItemGroup>
   <ItemGroup>
