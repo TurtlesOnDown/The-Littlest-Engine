@@ -1,7 +1,24 @@
 #include "Path.h"
 
+#if defined(_WIN32)
+#include <direct.h>
+#define GetCurrentDir _getcwd
+#else
+#include <unistd.h>
+#define GetCurrentDir getcwd
+#endif
+
+#include <stdio.h>  /* defines FILENAME_MAX */
+
 #include <numeric>
-#include "Misc.h"
+#include "../Utility/Misc.h"
+
+std::string Path::CWD() {
+  char buff[FILENAME_MAX];
+  GetCurrentDir(buff, FILENAME_MAX);
+  std::string current_working_dir(buff);
+  return current_working_dir;
+}
 
 Path::Path(std::string p, char delim) {
     // parse input into tokens
@@ -56,6 +73,7 @@ std::string Path::getPath() {
   return result;
 }
 
-void Path::cd(const std::string &) {
-
+std::string Path::getDirectory() {
+  std::string result = std::accumulate(path.begin() + 1, path.end(), path[0], [](std::string a, std::string b) {return a + "/" + b; });
+  return result;
 }

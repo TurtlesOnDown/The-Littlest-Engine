@@ -1,4 +1,4 @@
-#include "Includes.h"
+#include "../Common/Includes.h"
 
 #ifndef PATH
 #define PATH
@@ -15,8 +15,9 @@ public:
   std::string getFile();
   std::string getFileType();
   std::string getPath();
-  // not implemented yet
-  void cd(const std::string &);
+  std::string getDirectory();
+  
+  static std::string CWD();
 private:
   std::vector<std::string> path;
   std::string file;

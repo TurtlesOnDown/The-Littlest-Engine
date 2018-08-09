@@ -1,6 +1,6 @@
-#include "Includes.h"
+#include "../Engine/Common/Includes.h"
 
-#include "System.h"
+#include "../Engine/System/System.h"
 
 #ifndef CONSOLE
 #define CONSOLE

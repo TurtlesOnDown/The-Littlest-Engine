@@ -2,7 +2,7 @@
 
 #include <numeric>
 
-#include "Misc.h"
+#include "../Engine/Utility/Misc.h"
 
 Console::Console(MessageBus *mainBus):System(mainBus) {
 }
@@ -24,6 +24,7 @@ void Console::getInput() {
 }
 
 void Console::processCommand(const std::vector<std::string> &args) {
+  if (args.size() < 1) return;
   switch (stringtoUintHash(args[0]))
   {
   case cstringToUintHash("execute"): // send content to message bus

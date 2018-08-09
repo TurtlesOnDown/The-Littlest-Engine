@@ -1,131 +1,167 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Driver">
-      <UniqueIdentifier>{1ee44e71-3ce5-45d0-a72c-8c061ddd51e6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine">
-      <UniqueIdentifier>{c50983f9-6f1c-4841-9f12-204cfd1d30a3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Dependancies">
-      <UniqueIdentifier>{29022321-7654-46a3-9486-1a91df0250a5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Utility">
-      <UniqueIdentifier>{aef18f65-d5af-4509-a383-5937aeebed99}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Common">
-      <UniqueIdentifier>{b8ffa45f-4702-45ad-83f5-994268de16ad}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\System">
-      <UniqueIdentifier>{943aae20-68ef-41ba-9e4f-67eed16f1f93}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Debug">
-      <UniqueIdentifier>{c5bf8213-70d1-4ebc-8f3b-7de65d557768}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Memory">
-      <UniqueIdentifier>{3f01a742-e55a-4867-9b8d-64db17c8e21e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\ResourceManager">
-      <UniqueIdentifier>{db0b953a-42b7-43ed-b77a-4211245f1d10}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
+    <ClCompile Include="Engine\Batch.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\BathRenderer.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Console.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Common\Includes.cpp">
+      <Filter>Engine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Debug\Profiler.cpp">
+      <Filter>Engine\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Dependancies\glad.c">
+      <Filter>Engine\Dependancies</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\ResourceManager\Path.cpp">
+      <Filter>Engine\Resource Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\ResourceManager\Resource.cpp">
+      <Filter>Engine\Resource Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\ResourceManager\ResourceManager.cpp">
+      <Filter>Engine\Resource Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\System\MessageBus.cpp">
+      <Filter>Engine\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\System\System.cpp">
+      <Filter>Engine\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Utility\Misc.cpp">
+      <Filter>Engine\Utility</Filter>
+    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Driver</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Dependencies\OpenGL\glad.c">
-      <Filter>Engine\Dependancies</Filter>
+    <ClCompile Include="Engine\ResourceManager\Resources\Shader.cpp">
+      <Filter>Engine\Resource Manager\Resources</Filter>
     </ClCompile>
-    <ClCompile Include="Console.cpp">
-      <Filter>Engine</Filter>
+    <ClCompile Include="Engine\ResourceManager\Resources\Texture2D.cpp">
+      <Filter>Engine\Resource Manager\Resources</Filter>
     </ClCompile>
-    <ClCompile Include="Includes.cpp">
-      <Filter>Engine\Common</Filter>
+    <ClCompile Include="Engine\ResourceManager\Resources\Material.cpp">
+      <Filter>Engine\Resource Manager\Resources</Filter>
     </ClCompile>
-    <ClCompile Include="Misc.cpp">
-      <Filter>Engine\Utility</Filter>
+    <ClCompile Include="Engine\ResourceManager\Resources\Mesh.cpp">
+      <Filter>Engine\Resource Manager\Resources</Filter>
     </ClCompile>
-    <ClCompile Include="System.cpp">
-      <Filter>Engine\System</Filter>
-    </ClCompile>
-    <ClCompile Include="MessageBus.cpp">
-      <Filter>Engine\System</Filter>
-    </ClCompile>
-    <ClCompile Include="Profiler.cpp">
-      <Filter>Engine\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Resource.cpp">
-      <Filter>Engine\ResourceManager</Filter>
-    </ClCompile>
-    <ClCompile Include="Path.cpp">
-      <Filter>Engine\ResourceManager</Filter>
-    </ClCompile>
-    <ClCompile Include="ResourceManager.cpp">
-      <Filter>Engine\ResourceManager</Filter>
-    </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>Engine\ResourceManager</Filter>
+    <ClCompile Include="Engine\ResourceManager\Resources\Model.cpp">
+      <Filter>Engine\Resource Manager\Resources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Console.h">
+    <ClInclude Include="Engine\Batch.h">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Types.h">
+    <ClInclude Include="Engine\BatchRenderer.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Console.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Common\Includes.h">
       <Filter>Engine\Common</Filter>
     </ClInclude>
-    <ClInclude Include="Includes.h">
+    <ClInclude Include="Engine\Common\Types.h">
       <Filter>Engine\Common</Filter>
     </ClInclude>
-    <ClInclude Include="Misc.h">
-      <Filter>Engine\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="System.h">
-      <Filter>Engine\System</Filter>
-    </ClInclude>
-    <ClInclude Include="MessageBus.h">
-      <Filter>Engine\System</Filter>
-    </ClInclude>
-    <ClInclude Include="Profiler.h">
+    <ClInclude Include="Engine\Debug\Profiler.h">
       <Filter>Engine\Debug</Filter>
     </ClInclude>
-    <ClInclude Include="PoolAllocator.h">
+    <ClInclude Include="Engine\Memory\PoolAllocator.h">
       <Filter>Engine\Memory</Filter>
     </ClInclude>
-    <ClInclude Include="StackAllocator.h">
+    <ClInclude Include="Engine\Memory\StackAllocator.h">
       <Filter>Engine\Memory</Filter>
     </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Engine\ResourceManager</Filter>
+    <ClInclude Include="Engine\ResourceManager\Path.h">
+      <Filter>Engine\Resource Manager</Filter>
     </ClInclude>
-    <ClInclude Include="Path.h">
-      <Filter>Engine\ResourceManager</Filter>
+    <ClInclude Include="Engine\ResourceManager\Resource.h">
+      <Filter>Engine\Resource Manager</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceManager.h">
-      <Filter>Engine\ResourceManager</Filter>
+    <ClInclude Include="Engine\ResourceManager\ResourceManager.h">
+      <Filter>Engine\Resource Manager</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>Engine\ResourceManager</Filter>
+    <ClInclude Include="Engine\System\MessageBus.h">
+      <Filter>Engine\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\System\System.h">
+      <Filter>Engine\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Utility\Misc.h">
+      <Filter>Engine\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\ResourceManager\Resources\Shader.h">
+      <Filter>Engine\Resource Manager\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\ResourceManager\Resources\Texture2D.h">
+      <Filter>Engine\Resource Manager\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\ResourceManager\Resources\Material.h">
+      <Filter>Engine\Resource Manager\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\ResourceManager\Resources\Mesh.h">
+      <Filter>Engine\Resource Manager\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\ResourceManager\Resources\Model.h">
+      <Filter>Engine\Resource Manager\Resources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="PoolAllocator.tcc">
+    <Filter Include="Engine">
+      <UniqueIdentifier>{c761d0cb-8150-41e5-9f9d-2b00f1222cea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Driver">
+      <UniqueIdentifier>{5a752892-92ab-44e1-915d-7df824202a04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Common">
+      <UniqueIdentifier>{6bcf372e-12e6-4602-85ee-7ec6995af364}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Dependancies">
+      <UniqueIdentifier>{2015bf09-aa97-46ae-bbb5-872e41fc6745}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Utility">
+      <UniqueIdentifier>{f8d06a80-ff83-489e-9587-c7530f88165e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\System">
+      <UniqueIdentifier>{a0042c92-a5d9-44fc-8d01-8791a61e606c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Resource Manager">
+      <UniqueIdentifier>{b65cdc26-d783-4621-a3cd-e403d88ca858}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Memory">
+      <UniqueIdentifier>{eb4fe116-d9f7-4f94-be42-a482fc340bd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Debug">
+      <UniqueIdentifier>{6b616f6f-acc7-4de6-af6d-e875d6db9b3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Resource Manager\Resources">
+      <UniqueIdentifier>{ac89a8fd-ddf4-4436-9ad0-396da38706ff}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Engine\Memory\PoolAllocator.tcc">
       <Filter>Engine\Memory</Filter>
     </None>
-    <None Include="StackAllocator.tcc">
+    <None Include="Engine\Memory\StackAllocator.tcc">
       <Filter>Engine\Memory</Filter>
+    </None>
+    <None Include="test.lshader">
+      <Filter>Driver</Filter>
+    </None>
+    <None Include="testshader.vs">
+      <Filter>Driver</Filter>
+    </None>
+    <None Include="testshader.fs">
+      <Filter>Driver</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -18,8 +18,56 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine\Batch.cpp" />
+    <ClCompile Include="Engine\BathRenderer.cpp" />
+    <ClCompile Include="Engine\Common\Includes.cpp" />
+    <ClCompile Include="Engine\Console.cpp" />
+    <ClCompile Include="Engine\Debug\Profiler.cpp" />
+    <ClCompile Include="Engine\Dependancies\glad.c" />
+    <ClCompile Include="Engine\ResourceManager\Path.cpp" />
+    <ClCompile Include="Engine\ResourceManager\Resource.cpp" />
+    <ClCompile Include="Engine\ResourceManager\ResourceManager.cpp" />
+    <ClCompile Include="Engine\ResourceManager\Resources\Material.cpp" />
+    <ClCompile Include="Engine\ResourceManager\Resources\Mesh.cpp" />
+    <ClCompile Include="Engine\ResourceManager\Resources\Model.cpp" />
+    <ClCompile Include="Engine\ResourceManager\Resources\Shader.cpp" />
+    <ClCompile Include="Engine\ResourceManager\Resources\Texture2D.cpp" />
+    <ClCompile Include="Engine\System\MessageBus.cpp" />
+    <ClCompile Include="Engine\System\System.cpp" />
+    <ClCompile Include="Engine\Utility\Misc.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine\Batch.h" />
+    <ClInclude Include="Engine\BatchRenderer.h" />
+    <ClInclude Include="Engine\Common\Includes.h" />
+    <ClInclude Include="Engine\Common\Types.h" />
+    <ClInclude Include="Engine\Console.h" />
+    <ClInclude Include="Engine\Debug\Profiler.h" />
+    <ClInclude Include="Engine\Memory\PoolAllocator.h" />
+    <ClInclude Include="Engine\Memory\StackAllocator.h" />
+    <ClInclude Include="Engine\ResourceManager\Path.h" />
+    <ClInclude Include="Engine\ResourceManager\Resource.h" />
+    <ClInclude Include="Engine\ResourceManager\ResourceManager.h" />
+    <ClInclude Include="Engine\ResourceManager\Resources\Material.h" />
+    <ClInclude Include="Engine\ResourceManager\Resources\Mesh.h" />
+    <ClInclude Include="Engine\ResourceManager\Resources\Model.h" />
+    <ClInclude Include="Engine\ResourceManager\Resources\Shader.h" />
+    <ClInclude Include="Engine\ResourceManager\Resources\Texture2D.h" />
+    <ClInclude Include="Engine\System\MessageBus.h" />
+    <ClInclude Include="Engine\System\System.h" />
+    <ClInclude Include="Engine\Utility\Misc.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Engine\Memory\PoolAllocator.tcc" />
+    <None Include="Engine\Memory\StackAllocator.tcc" />
+    <None Include="test.lshader" />
+    <None Include="testshader.fs" />
+    <None Include="testshader.vs" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{72EB090A-A7F4-4026-A8A2-B00115AED3C6}</ProjectGuid>
+    <ProjectGuid>{F2C2ADFA-4AF0-4368-8440-A15C739D8948}</ProjectGuid>
     <RootNamespace>TheLittlestEngine</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -69,12 +117,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\SMR0609\Documents\Visual Studio 2015\Dependencies\OpenGL\Includes;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\SMR0609\Documents\Visual Studio 2015\Dependencies\OpenGL\Libraries;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Spenser R\Documents\!Dependancies\OpenGL\Includes;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Spenser R\Documents\!Dependancies\OpenGL\Libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\Users\SMR0609\Documents\Visual Studio 2015\Dependencies\OpenGL\Includes;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\SMR0609\Documents\Visual Studio 2015\Dependencies\OpenGL\Libraries;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Spenser\Documents\!Dependancies\OpenGL\Includes;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Spenser\Documents\!Dependancies\OpenGL\Libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -83,7 +131,7 @@
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -120,39 +168,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\Dependencies\OpenGL\glad.c" />
-    <ClCompile Include="Console.cpp" />
-    <ClCompile Include="Includes.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="MessageBus.cpp" />
-    <ClCompile Include="Misc.cpp" />
-    <ClCompile Include="Path.cpp" />
-    <ClCompile Include="Profiler.cpp" />
-    <ClCompile Include="Resource.cpp" />
-    <ClCompile Include="ResourceManager.cpp" />
-    <ClCompile Include="System.cpp" />
-    <ClCompile Include="Texture.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Console.h" />
-    <ClInclude Include="Includes.h" />
-    <ClInclude Include="MessageBus.h" />
-    <ClInclude Include="Misc.h" />
-    <ClInclude Include="Path.h" />
-    <ClInclude Include="PoolAllocator.h" />
-    <ClInclude Include="Profiler.h" />
-    <ClInclude Include="Resource.h" />
-    <ClInclude Include="ResourceManager.h" />
-    <ClInclude Include="StackAllocator.h" />
-    <ClInclude Include="System.h" />
-    <ClInclude Include="Texture.h" />
-    <ClInclude Include="Types.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="PoolAllocator.tcc" />
-    <None Include="StackAllocator.tcc" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
